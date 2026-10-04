@@ -1,0 +1,265 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: #15191b;
+    color: #17191a;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+    background:
+        linear-gradient(120deg, rgba(220, 225, 220, 0.8), rgba(80, 90, 90, 0.5)),
+        linear-gradient(35deg, #20272a 20%, #b9c0bd 20%, #b9c0bd 50%, #30383a 50%);
+    z-index: -2;
+}
+
+.background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, transparent 49%, rgba(255, 255, 255, 0.25) 50%, transparent 51%),
+        linear-gradient(0deg, transparent 49%, rgba(0, 0, 0, 0.15) 50%, transparent 51%);
+    background-size: 140px 140px;
+    opacity: 0.35;
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 35px;
+    color: white;
+    background: rgba(15, 18, 19, 0.8);
+    border-bottom: 3px solid #e66b2f;
+    letter-spacing: 2px;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+.date {
+    opacity: 0.7;
+}
+
+main {
+    position: relative;
+    width: min(1200px, 92%);
+    margin: 45px auto;
+    min-height: 850px;
+}
+
+.panel {
+    position: absolute;
+    background: rgba(245, 245, 240, 0.88);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 8px 8px 0 rgba(20, 24, 25, 0.35);
+    padding: 25px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: #e35f27;
+}
+
+.panel h2 {
+    margin: 0 0 12px;
+    font-size: 28px;
+}
+
+.panel p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.about {
+    top: 30px;
+    left: 0;
+    width: 300px;
+}
+
+.education {
+    top: 35px;
+    right: 0;
+    width: 340px;
+}
+
+.profile {
+    position: absolute;
+    top: 160px;
+    left: 50%;
+    width: 420px;
+    transform: translateX(-50%);
+}
+
+.profile-image {
+    height: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        linear-gradient(135deg, rgba(20, 30, 35, 0.85), rgba(70, 90, 95, 0.6)),
+        #263035;
+    border: 4px solid white;
+    box-shadow: 12px 12px 0 rgba(10, 13, 14, 0.45);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.profile-name {
+    position: absolute;
+    bottom: -45px;
+    left: -35px;
+    padding: 18px 25px;
+    background: rgba(250, 250, 245, 0.94);
+    border-left: 8px solid #e35f27;
+    box-shadow: 7px 7px 0 rgba(10, 13, 14, 0.35);
+}
+
+.profile-name span {
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.profile-name h1 {
+    margin: 4px 0 0;
+    font-size: 42px;
+    line-height: 0.9;
+}
+
+.interests {
+    top: 460px;
+    left: 0;
+    width: 280px;
+}
+
+.interest {
+    display: flex;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #aaa;
+}
+
+.interest strong {
+    color: #e35f27;
+}
+
+.skills {
+    top: 500px;
+    right: 0;
+    width: 300px;
+}
+
+.skill {
+    margin-bottom: 18px;
+}
+
+.skill span {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.bar {
+    height: 8px;
+    background: #c5c8c5;
+}
+
+.bar i {
+    display: block;
+    height: 100%;
+    width: 75%;
+    background: #e35f27;
+}
+
+.projects {
+    left: 50%;
+    bottom: 0;
+    width: 600px;
+    transform: translateX(-50%);
+}
+
+.project {
+    display: flex;
+    gap: 20px;
+    padding: 12px 0;
+    border-top: 1px solid #aaa;
+}
+
+.project strong {
+    color: #e35f27;
+}
+
+.project h3 {
+    margin: 0 0 5px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 35px;
+    background: rgba(15, 18, 19, 0.9);
+    color: white;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 800px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        min-height: auto;
+    }
+
+    .panel,
+    .profile {
+        position: relative;
+        top: auto;
+        right: auto;
+        left: auto;
+        bottom: auto;
+        width: 100%;
+        transform: none;
+    }
+
+    .profile {
+        order: -1;
+    }
+
+    .profile-name {
+        left: 15px;
+    }
+}
+
+.profile.active {
+    transform: translateX(-50%) translateY(-8px);
+    transition: 0.2s;
+}
+
+.profile {
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
