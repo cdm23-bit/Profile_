@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Profile
 
-## Getting Started
+So uh, this is my first GitHub repository and also my first proper web project.
 
-First, run the development server:
+it's just a simple profile page I made for school while trying to figure out how all this GitHub stuff works.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+the project was made with the help of ChatGPT
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## what's here?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+a profile page.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+that's pretty much it.
 
-## Learn More
+nothing groundbreaking. 
 
-To learn more about Next.js, take a look at the following resources:
+## tech stuff
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js
+- React
+- TypeScript / TSX
+- CSS
+- GitHub
+- Vercel
+- VS Code
+- ChatGPT
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## why this repository exists
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+mostly so I can look back at it later and see how bad my first project was.
