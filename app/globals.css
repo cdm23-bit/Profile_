@@ -18,7 +18,15 @@ body {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
   color: #e6e3dc;
+}
+
+.site-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #44484b;
 }
 
 button {
@@ -29,64 +37,93 @@ button {
    END: GLOBAL STYLES
    ============================================================ */
 
-
 /* ============================================================
-   START: MECHANICAL BACKGROUND
+   START: AMBIENT VECTOR BACKGROUND
    ============================================================ */
 
-.mechanical-bg {
+.ambient-background {
   position: fixed;
   inset: 0;
   z-index: 0;
-  pointer-events: none;
   overflow: hidden;
-  background: #44484b;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 78% 47%, rgba(39, 65, 76, 0.42), transparent 48%),
+    linear-gradient(135deg, #363b40, #45494c 48%, #34393e);
 }
 
-.system-svg {
+.ambient-vector {
   width: 100%;
   height: 100%;
-  display: block;
+  opacity: 0.76;
 }
 
-.board-traces path {
-  fill: none;
-  stroke: rgba(230, 227, 220, 0.11);
-  stroke-width: 1.2;
-  stroke-linejoin: miter;
-  stroke-linecap: square;
-}
-
-.board-secondary path {
-  fill: none;
-  stroke: rgba(230, 227, 220, 0.055);
+.ambient-facets polygon,
+.ambient-facets path {
+  fill: rgba(16, 23, 29, 0.19);
+  stroke: rgba(170, 190, 196, 0.07);
   stroke-width: 1;
-  stroke-linejoin: miter;
-  stroke-linecap: square;
 }
 
-.board-accent-traces path {
+.ambient-contours path {
   fill: none;
-  stroke: rgba(255, 121, 0, 0.38);
-  stroke-width: 1.5;
-  stroke-linejoin: miter;
-  stroke-linecap: square;
+  stroke: rgba(161, 179, 185, 0.14);
+  stroke-width: 1;
 }
 
-.board-nodes circle {
+.ambient-orbit path {
+  fill: none;
+  stroke: rgba(224, 112, 49, 0.24);
+  stroke-width: 1;
+  stroke-dasharray: 46 18 8 22;
+  animation: vector-orbit 70s linear infinite;
+}
+
+.ambient-markers path,
+.ambient-markers circle {
+  fill: none;
+  stroke: rgba(235, 125, 57, 0.4);
+  stroke-width: 1;
+}
+
+.ambient-markers circle {
   fill: #44484b;
-  stroke: rgba(255, 121, 0, 0.55);
-  stroke-width: 1.4;
 }
 
-.board-components rect {
-  fill: rgba(25, 27, 29, 0.18);
-  stroke: rgba(230, 227, 220, 0.09);
-  stroke-width: 1;
+.ambient-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0,
+    transparent 5px,
+    rgba(220, 228, 230, 0.12) 6px
+  );
+  animation: ambient-scan 18s linear infinite;
+}
+
+@keyframes vector-orbit {
+  to {
+    stroke-dashoffset: -376;
+  }
+}
+
+@keyframes ambient-scan {
+  to {
+    transform: translateY(12px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ambient-orbit path,
+  .ambient-grain {
+    animation: none;
+  }
 }
 
 /* ============================================================
-   END: MECHANICAL BACKGROUND
+   END: AMBIENT VECTOR BACKGROUND
    ============================================================ */
 
 
@@ -124,7 +161,7 @@ button {
   border-bottom: 0;
   background: rgba(25, 27, 29, 0.88);
   color: rgba(230, 227, 220, 0.4);
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.16em;
 }
 
@@ -143,7 +180,7 @@ button {
   background: transparent;
   color: rgba(230, 227, 220, 0.42);
   cursor: pointer;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.14em;
   transition:
     color 0.2s ease,
@@ -220,7 +257,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #050505;
+  background: rgba(5, 5, 5, 0.68);
 }
 
 .home-content-center {
@@ -275,7 +312,7 @@ button {
   padding: 12px 18px;
   border-top: 1px solid rgba(255, 121, 0, 0.7);
   border-bottom: 1px solid rgba(255, 121, 0, 0.7);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.25em;
 }
 
@@ -445,7 +482,7 @@ button {
   padding: 8px 10px;
   background: rgba(25, 27, 29, 0.82);
   color: rgba(230, 227, 220, 0.65);
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.16em;
 }
 
@@ -487,6 +524,7 @@ button {
    ============================================================ */
 
 .identity-name h1 {
+  max-width: 15ch;
   margin: 0;
   color: #e6e3dc;
   font-size: clamp(24px, 2.5vw, 42px);
@@ -498,7 +536,7 @@ button {
 .identity-name p {
   margin: 14px 0 0;
   color: rgba(230, 227, 220, 0.43);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.16em;
 }
 
@@ -507,7 +545,7 @@ button {
   right: 12px;
   top: 50%;
   color: rgba(230, 227, 220, 0.22);
-  font-size: 7px;
+  font-size: 9px;
   letter-spacing: 0.2em;
   writing-mode: vertical-rl;
   transform: translateY(-50%);
@@ -563,7 +601,7 @@ button {
   padding-bottom: 12px;
   border-bottom: 1px solid rgba(230, 227, 220, 0.09);
   color: rgba(230, 227, 220, 0.62);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.18em;
 }
 
@@ -584,7 +622,7 @@ button {
   max-width: 520px;
   margin: 24px 0 0;
   color: rgba(230, 227, 220, 0.56);
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.8;
 }
 
@@ -606,7 +644,7 @@ button {
 
 .interest-grid span {
   color: rgba(230, 227, 220, 0.56);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.13em;
 }
 
@@ -642,9 +680,10 @@ button {
 .quote-content q {
   max-width: 520px;
   color: rgba(230, 227, 220, 0.5);
-  font-size: clamp(11px, 1vw, 14px);
+  font-size: clamp(13px, 1.1vw, 15px);
   line-height: 1.9;
   letter-spacing: 0.035em;
+  white-space: pre-line;
 }
 
 /* ============================================================
@@ -684,7 +723,7 @@ button {
 
 .eyebrow {
   color: #ff7900;
-  font-size: 8px;
+  font-size: 10px;
   letter-spacing: 0.2em;
 }
 
@@ -697,7 +736,7 @@ button {
 
 .skills-heading-marker {
   color: rgba(255, 121, 0, 0.65);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.15em;
 }
 
@@ -709,11 +748,11 @@ button {
 
 .skill-bar-row {
   display: grid;
-  grid-template-columns: 120px 1fr 55px;
+  grid-template-columns: 120px minmax(0, 1fr) 55px;
   align-items: center;
   gap: 18px;
   color: rgba(230, 227, 220, 0.7);
-  font-size: 9px;
+  font-size: 12px;
   letter-spacing: 0.15em;
 }
 
@@ -730,6 +769,7 @@ button {
 
 .skill-value {
   color: rgba(230, 227, 220, 0.35);
+  font-size: 12px;
   text-align: right;
 }
 
@@ -766,7 +806,7 @@ button {
 .project-number {
   padding: 25px 0 0 18px;
   color: rgba(255, 121, 0, 0.65);
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 0.15em;
 }
 
@@ -783,11 +823,27 @@ button {
   letter-spacing: -0.025em;
 }
 
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 12px;
+}
+
+.project-status {
+  padding: 5px 7px;
+  border: 1px solid rgba(230, 227, 220, 0.15);
+  color: rgba(230, 227, 220, 0.55);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+}
+
 .project-body p {
   max-width: 470px;
   margin: 0;
   color: rgba(230, 227, 220, 0.5);
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.8;
 }
 
@@ -802,7 +858,7 @@ button {
   padding: 6px 9px;
   border: 1px solid rgba(255, 121, 0, 0.25);
   color: rgba(230, 227, 220, 0.48);
-  font-size: 7px;
+  font-size: 10px;
   letter-spacing: 0.14em;
 }
 
@@ -838,7 +894,7 @@ button {
   max-width: 430px;
   margin: 0;
   color: rgba(230, 227, 220, 0.5);
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.8;
 }
 
@@ -849,31 +905,61 @@ button {
   background: rgba(35, 38, 40, 0.32);
 }
 
-.contact-row {
-  min-height: 65px;
+.contact-links {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.contact-link {
+  min-width: 0;
+  min-height: 92px;
+  padding: 16px 14px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  border-bottom: 1px solid rgba(230, 227, 220, 0.08);
+  gap: 12px;
+  border: 1px solid rgba(230, 227, 220, 0.1);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
 }
 
-.contact-row:last-child {
-  border-bottom: 0;
+.contact-link:hover,
+.contact-link:focus-visible {
+  border-color: rgba(255, 121, 0, 0.55);
+  background: rgba(255, 121, 0, 0.06);
+  outline: none;
 }
 
-.contact-row span {
+.contact-link > svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  color: #ff7900;
+  stroke-width: 1.7;
+}
+
+.contact-link-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.contact-link-name {
   color: rgba(255, 121, 0, 0.65);
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 0.17em;
 }
 
-.contact-row strong {
+.contact-link-value {
+  overflow-wrap: anywhere;
   color: rgba(230, 227, 220, 0.55);
-  font-size: 9px;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-align: right;
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 /* ============================================================
@@ -896,7 +982,7 @@ button {
   border-top: 1px solid rgba(230, 227, 220, 0.08);
   background: #252729;
   color: rgba(230, 227, 220, 0.28);
-  font-size: 7px;
+  font-size: 9px;
   letter-spacing: 0.15em;
 }
 
@@ -949,6 +1035,12 @@ button {
   }
 }
 
+@media (max-width: 1100px) {
+  .contact-links {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 650px) {
   .nav-system-label {
     display: none;
@@ -963,8 +1055,8 @@ button {
   }
 
   .nav-items button {
-    font-size: 6px;
-    letter-spacing: 0.08em;
+    font-size: 9px;
+    letter-spacing: 0.04em;
   }
 
   /* ============================================================
@@ -1087,9 +1179,14 @@ button {
   }
 
   .skill-bar-row {
-    grid-template-columns: 80px 1fr 45px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 48px;
     gap: 10px;
-    font-size: 7px;
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .skill-value {
+    font-size: 11px;
   }
 
   .skills-panel {
@@ -1139,6 +1236,11 @@ button {
 
   .contact-box {
     width: 100%;
+    padding: 22px 20px;
+  }
+
+  .contact-links {
+    grid-template-columns: 1fr;
   }
 
   /* ============================================================
