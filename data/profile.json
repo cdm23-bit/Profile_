@@ -1,0 +1,85 @@
+{
+  "id": "main",
+  "fullName": "CHRISTIAN DAVE MAINIT",
+  "program": "BS INFORMATION TECHNOLOGY",
+  "studentId": "ID 241-0469",
+  "photoUrl": "/profile1.jpg",
+  "about": "An Information Technology student focused on developing practical skills in software and web development.",
+  "personalNote": "Born too late to explore Earth.\nBorn too late to explore the universe.\nBorn just in time to explore the internet.",
+  "communicationDescription": "Contact information for communication, collaboration, and project-related inquiries.",
+  "interests": [
+    { "id": "games", "label": "GAMES" },
+    { "id": "technology", "label": "TECHNOLOGY" },
+    { "id": "anime", "label": "ANIME" },
+    { "id": "etc", "label": "ETC" }
+  ],
+  "skills": [
+    { "id": "java", "name": "JAVA", "mastery": 55 },
+    { "id": "html", "name": "HTML", "mastery": 61 },
+    { "id": "css", "name": "CSS", "mastery": 53 },
+    { "id": "php", "name": "PHP", "mastery": 32 },
+    { "id": "javascript", "name": "JAVASCRIPT", "mastery": 16 }
+  ],
+  "projects": [
+    {
+      "id": "donut-business-management-system",
+      "name": "DONUT BUSINESS MANAGEMENT SYSTEM",
+      "category": "SYSTEM PROJECT",
+      "description": "A web-based system for managing a student donut business, including inventory, reservations, sales, remaining stock, and demand tracking.",
+      "status": "IN DEVELOPMENT",
+      "technologies": [
+        { "id": "php", "name": "PHP" },
+        { "id": "mysql", "name": "MYSQL" },
+        { "id": "html", "name": "HTML" },
+        { "id": "css", "name": "CSS" },
+        { "id": "javascript", "name": "JAVASCRIPT" }
+      ]
+    },
+    {
+      "id": "personal-profile",
+      "name": "PERSONAL PROFILE",
+      "category": "WEB PROJECT",
+      "description": "A personal profile website presenting personal information, skills, projects, interests, and contact information through a technical interface design.",
+      "status": "COMPLETED",
+      "technologies": [
+        { "id": "html", "name": "HTML" },
+        { "id": "css", "name": "CSS" },
+        { "id": "javascript", "name": "JAVASCRIPT" }
+      ]
+    }
+  ],
+  "socialLinks": [
+    {
+      "id": "email",
+      "label": "EMAIL",
+      "value": "chr1st14nd4v323@gmail.com",
+      "href": "mailto:chr1st14nd4v323@gmail.com",
+      "icon": "mail",
+      "opensNewTab": false
+    },
+    {
+      "id": "phone",
+      "label": "PHONE",
+      "value": "09069565428",
+      "href": "tel:09069565428",
+      "icon": "phone",
+      "opensNewTab": false
+    },
+    {
+      "id": "facebook",
+      "label": "FACEBOOK",
+      "value": "ChristianDave Namuhe Mainit",
+      "href": "https://www.facebook.com/",
+      "icon": "facebook",
+      "opensNewTab": true
+    },
+    {
+      "id": "github",
+      "label": "GITHUB",
+      "value": "github.com/cdm23-bit",
+      "href": "https://github.com/cdm23-bit",
+      "icon": "github",
+      "opensNewTab": true
+    }
+  ]
+}

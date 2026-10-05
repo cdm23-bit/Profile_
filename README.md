@@ -6,28 +6,17 @@ it's just a simple profile page I made for school while trying to figure out how
 
 the project was made with the help of ChatGPT
 
-## Database setup
+## Profile content
 
-Profile content is stored in PostgreSQL and queried on the server for each
-page request. Create a PostgreSQL database with a provider of your choice, then
-set `DATABASE_URL` to its connection string. Copy `.env.example` to `.env` and
-replace the placeholder connection string with your database credentials.
-
-Install the dependencies, apply the migrations, seed the initial profile, and
-start the app:
+Profile content lives in `data/profile.json` and is loaded through the typed
+data-access function in `lib/profile-data.ts`. The page renders from that data
+file at build time, so deployment does not require a database, credentials, or
+runtime data service.
 
 ```sh
 npm install
-npm run db:migrate
-npm run db:seed
 npm run dev
 ```
-
-For Vercel, configure `DATABASE_URL` in the project's Environment Variables for
-the environments you deploy, then run `npm run db:migrate` and `npm run db:seed`
-against that hosted database before serving the site. Prisma Client is
-generated automatically during installation; building the app does not
-require a database connection.
 
 ## what's here?
 
@@ -43,7 +32,7 @@ nothing groundbreaking.
 - React 19
 - TypeScript / TSX
 - CSS
-- PostgreSQL with Prisma ORM
+- JSON profile data with a TypeScript data-access layer
 - Tabler Icons React
 - Node.js and npm
 

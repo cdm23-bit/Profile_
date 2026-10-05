@@ -5,13 +5,15 @@ import {
   IconMail,
   IconPhone,
 } from "@tabler/icons-react";
-import type { ProfileData } from "@/lib/profile-data";
+import type {
+  ProfileData,
+  Project,
+  Skill,
+  SocialLink,
+} from "@/lib/profile-data";
 import ExploreButton from "./explore-button";
 
 type Profile = ProfileData;
-type Skill = Profile["skills"][number];
-type Project = Profile["projects"][number];
-type SocialLink = Profile["socialLinks"][number];
 
 export function HomeSection() {
   return (

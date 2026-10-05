@@ -1,29 +1,56 @@
-import "server-only";
-import { prisma } from "@/lib/prisma";
+import profileData from "@/data/profile.json";
 
-export async function getProfileData() {
-  const profile = await prisma.profile.findUnique({
-    where: { id: "main" },
-    include: {
-      interests: { orderBy: { sortOrder: "asc" } },
-      skills: { orderBy: { sortOrder: "asc" } },
-      projects: {
-        orderBy: { sortOrder: "asc" },
-        include: {
-          technologies: { orderBy: { sortOrder: "asc" } },
-        },
-      },
-      socialLinks: { orderBy: { sortOrder: "asc" } },
-    },
-  });
-
-  if (!profile) {
-    throw new Error(
-      "Profile data is missing. Run the database migration and seed commands.",
-    );
-  }
-
-  return profile;
+export interface ProfileInterest {
+  id: string;
+  label: string;
 }
 
-export type ProfileData = Awaited<ReturnType<typeof getProfileData>>;
+export interface Skill {
+  id: string;
+  name: string;
+  mastery: number;
+}
+
+export interface ProjectTechnology {
+  id: string;
+  name: string;
+}
+
+export interface Project {
+  id: string;
+  name: string;
+  category: string;
+  description: string;
+  status: string;
+  technologies: ProjectTechnology[];
+}
+
+export interface SocialLink {
+  id: string;
+  label: string;
+  value: string;
+  href: string;
+  icon: string;
+  opensNewTab: boolean;
+}
+
+export interface ProfileData {
+  id: string;
+  fullName: string;
+  program: string;
+  studentId: string;
+  photoUrl: string;
+  about: string;
+  personalNote: string;
+  communicationDescription: string;
+  interests: ProfileInterest[];
+  skills: Skill[];
+  projects: Project[];
+  socialLinks: SocialLink[];
+}
+
+const profile: ProfileData = profileData;
+
+export function getProfileData(): ProfileData {
+  return profile;
+}

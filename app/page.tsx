@@ -10,10 +10,8 @@ import {
 } from "@/app/components/profile-sections";
 import { getProfileData } from "@/lib/profile-data";
 
-export const dynamic = "force-dynamic";
-
-export default async function Home() {
-  const profile = await getProfileData();
+export default function Home() {
+  const profile = getProfileData();
 
   return (
     <main className="site-shell">
