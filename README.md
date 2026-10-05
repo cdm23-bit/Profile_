@@ -4,7 +4,7 @@ So uh, this is my first GitHub repository and also my first proper web project.
 
 it's just a simple profile page I made for school while trying to figure out how all this GitHub stuff works.
 
-the project was made with the help of ChatGPT
+the project was made with the help of ChatGPT and Copilot
 
 ## Profile content
 
