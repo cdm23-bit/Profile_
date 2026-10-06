@@ -1,37 +1,41 @@
-# My Profile — A Profile Story
+# My Profile
 
-This project presents Christian Dave Mainit's profile as a short, playable
-visual novel. Start at the title screen, advance the dialogue, and choose a
-topic to explore. The story runs locally in the browser and uses no backend or
-external game engine.
+So uh, this is my first GitHub repository and also my first proper web project.
 
-## Run locally
+it's just a simple profile page I made for school while trying to figure out how all this GitHub stuff works.
+
+the project was made with the help of ChatGPT and Copilot
+
+## Profile content
+
+Profile content lives in `data/profile.json` and is loaded through the typed
+data-access function in `lib/profile-data.ts`. The page renders from that data
+file at build time, so deployment does not require a database, credentials, or
+runtime data service.
 
 ```sh
 npm install
 npm run dev
 ```
 
-Use the on-screen Continue button, click the dialogue, or press Enter/Space to
-advance. When a line is still typing, the first input reveals it; the next
-advances. Topic choices appear at the end of a scene.
+## what's here?
 
-## Edit the profile and story
+a profile page.
 
-- `data/profile.json` holds the profile details.
-- `lib/profile-data.ts` exposes the typed profile data.
-- `data/visual-novel-script.ts` defines the scenes, dialogue, choices, and
-  profile-driven skill, project, and contact readouts.
-- `app/components/` contains the title, scene, portrait, dialogue, choices, and
-  credits UI.
+that's pretty much it.
 
-The story is a client-side React experience on the existing Next.js App Router
-and TypeScript foundation. Profile and story content are bundled with the app;
-no database, credentials, or audio assets are required.
+nothing groundbreaking. 
 
-## Checks
+## tech stuff
 
-```sh
-npm run lint
-npm run build
-```
+- Next.js 16 (App Router)
+- React 19
+- TypeScript / TSX
+- CSS
+- JSON profile data with a TypeScript data-access layer
+- Tabler Icons React
+- Node.js and npm
+
+## why this repository exists
+
+mostly so I can look back at it later and see how bad my first project was.

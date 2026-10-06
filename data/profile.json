@@ -15,24 +15,12 @@
   ],
   "skills": [
     { "id": "java", "name": "JAVA", "mastery": 55 },
-    { "id": "html", "name": "HTML", "mastery": 60 },
-    { "id": "css", "name": "CSS", "mastery": 58 },
-    { "id": "php", "name": "PHP", "mastery": 50 },
-    { "id": "javascript", "name": "JAVASCRIPT", "mastery": 35 }
+    { "id": "html", "name": "HTML", "mastery": 61 },
+    { "id": "css", "name": "CSS", "mastery": 53 },
+    { "id": "php", "name": "PHP", "mastery": 32 },
+    { "id": "javascript", "name": "JAVASCRIPT", "mastery": 16 }
   ],
   "projects": [
-    {
-      "id": "personal-profile",
-      "name": "PERSONAL PROFILE",
-      "category": "WEB PROJECT",
-      "description": "A personal profile website presenting personal information, skills, projects, interests, and contact information through a technical interface design.",
-      "status": "COMPLETED",
-      "technologies": [
-        { "id": "html", "name": "HTML" },
-        { "id": "css", "name": "CSS" },
-        { "id": "javascript", "name": "JAVASCRIPT" }
-      ]
-    },
     {
       "id": "donut-business-management-system",
       "name": "DONUT BUSINESS MANAGEMENT SYSTEM",
@@ -42,6 +30,18 @@
       "technologies": [
         { "id": "php", "name": "PHP" },
         { "id": "mysql", "name": "MYSQL" },
+        { "id": "html", "name": "HTML" },
+        { "id": "css", "name": "CSS" },
+        { "id": "javascript", "name": "JAVASCRIPT" }
+      ]
+    },
+    {
+      "id": "personal-profile",
+      "name": "PERSONAL PROFILE",
+      "category": "WEB PROJECT",
+      "description": "A personal profile website presenting personal information, skills, projects, interests, and contact information through a technical interface design.",
+      "status": "COMPLETED",
+      "technologies": [
         { "id": "html", "name": "HTML" },
         { "id": "css", "name": "CSS" },
         { "id": "javascript", "name": "JAVASCRIPT" }
